@@ -1,7 +1,23 @@
-config BR2_PACKAGE_FLUTTER_ENGINE
-        bool "flutter_engine"
-        help
-          This is a comment that explains what libfoo is. The help text
-          should be wrapped.
+config BR2_PACKAGE_FLUTTER_ENGINE_ARCH_SUPPORTS
+	bool
+	default y if BR2_x86_64 || BR2_aarch64
 
-          http://foosoftware.org/libfoo/
+comment "flutter-engine needs a 64-bit architecture and a toolchain w/ dynamic library, threads"
+	depends on BR2_USE_MMU # fork()
+	depends on BR2_PACKAGE_FLUTTER_ENGINE_ARCH_SUPPORTS
+	depends on !BR2_PACKAGE_HAS_LIBEGL
+	depends on BR2_STATIC_LIBS || !BR2_TOOLCHAIN_HAS_THREADS
+
+config BR2_PACKAGE_FLUTTER_ENGINE
+	bool "flutter-engine
+	depends on BR2_USE_MMU # fork()
+	depends on !BR2_STATIC_LIBS
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	depends on BR2_PACKAGE_HAS_LIBEGL
+	depends on BR2_PACKAGE_FLUTTER_ENGINE_ARCH_SUPPORTS
+	select BR2_PACKAGE_OPENSSL
+	help
+	  Flutter is Google's SDK for crafting beautiful, fast user experiences
+	  for mobile, web, and desktop from a single codebase.
+
+	  https://github.com/flutter/engine
