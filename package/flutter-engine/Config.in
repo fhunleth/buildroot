@@ -9,7 +9,7 @@ comment "flutter-engine needs a 64-bit architecture and a toolchain w/ dynamic l
 	depends on BR2_STATIC_LIBS || !BR2_TOOLCHAIN_HAS_THREADS
 
 config BR2_PACKAGE_FLUTTER_ENGINE
-	bool "flutter-engine
+	bool "flutter-engine"
 	depends on BR2_USE_MMU # fork()
 	depends on !BR2_STATIC_LIBS
 	depends on BR2_TOOLCHAIN_HAS_THREADS
