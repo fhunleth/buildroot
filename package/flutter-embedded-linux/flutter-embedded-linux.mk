@@ -12,6 +12,6 @@ FLUTTER_EMBEDDED_LINUX_LICENSE_FILES = LICENSE
 
 FLUTTER_EMBEDDED_LINUX_CONF_OPTS = -DUSER_PROJECT_PATH=examples/flutter-drm-gbm-backend
 
-FLUTTER_EMBEDDED_LINUX_DEPENDENCIES = libinput libxkbcommon flutter-engine-binaries-for-arm
+FLUTTER_EMBEDDED_LINUX_DEPENDENCIES = libinput libxkbcommon flutter-engine-binaries-for-arm xkeyboard-config
 
 $(eval $(cmake-package))
