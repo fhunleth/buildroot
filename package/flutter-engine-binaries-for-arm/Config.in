@@ -15,7 +15,6 @@ config BR2_PACKAGE_FLUTTER_ENGINE_BINARIES_FOR_ARM
 	depends on BR2_TOOLCHAIN_HAS_THREADS
 	depends on BR2_PACKAGE_HAS_LIBEGL
 	depends on BR2_PACKAGE_FLUTTER_ENGINE_BINARIES_FOR_ARM_ARCH_SUPPORTS
-	select BR2_PACKAGE_OPENSSL
 	help
 	  Flutter is Google's SDK for crafting beautiful, fast user experiences
 	  for mobile, web, and desktop from a single codebase.
