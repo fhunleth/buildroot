@@ -12,6 +12,6 @@ FLUTTER_PI_LICENSE_FILES = LICENSE
 
 FLUTTER_PI_CONF_OPTS = -DUSER_PROJECT_PATH=examples/flutter-drm-gbm-backend
 
-FLUTTER_PI_DEPENDENCIES = libinput libxkbcommon xkeyboard-config
+FLUTTER_PI_DEPENDENCIES = mesa3d libinput libxkbcommon xkeyboard-config
 
 $(eval $(cmake-package))
