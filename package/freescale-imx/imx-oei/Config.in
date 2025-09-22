@@ -1,0 +1,8 @@
+config BR2_PACKAGE_IMX_OEI
+	bool "imx-oei"
+	depends on BR2_aarch64
+	depends on BR2_PACKAGE_HOST_ARM_GNU_TOOLCHAIN_SUPPORTS
+	help
+	  Optional Executable Image assembler for i.MX processors
+
+	  https://github.com/nxp-imx/imx-oei/
